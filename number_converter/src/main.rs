@@ -3,7 +3,18 @@ use std::process::exit;
 
 // Converts binary string to digital
 fn binary_to_digital(input: &str) {
-    println!("In binary to digital");
+    // Check if input string too long
+    if input.len() > 128 {
+        println!("Input string too long - 128 bits maximum");
+        return;
+    }
+    // Number created
+    let mut num: u128 = 0;
+    // Iterate through members of input string
+    for c in input.chars() {
+
+    }
+    println!("{}", num);
 }
 
 
