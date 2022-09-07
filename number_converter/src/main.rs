@@ -12,7 +12,12 @@ fn binary_to_digital(input: &str) {
     let mut num: u128 = 0;
     // Iterate through members of input string
     for c in input.chars() {
-
+        num = num << 1;
+        match c {
+            '0' => (),
+            '1' => num = num + 1,
+            _ => { println!("Input string can only contain 0 and 1"); exit(-1) }
+        }
     }
     println!("{}", num);
 }
