@@ -1,6 +1,10 @@
 use std::env;
 
 fn main() {
+    // Collect the command line arguments
     let args: Vec<String> = env::args().collect();
-    dbg!(args);
+    // Iterate through the command line arguments
+    for arg in args.iter() {
+        println!("{}", arg);
+    }
 }
