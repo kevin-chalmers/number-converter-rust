@@ -1,6 +1,12 @@
 use std::env;
 use std::process::exit;
 
+// Converts binary string to digital
+fn binary_to_digital(input: &str) {
+    println!("In binary to digital");
+}
+
+
 fn main() {
     // Collect the command line arguments
     let args: Vec<String> = env::args().collect();
@@ -15,7 +21,7 @@ fn main() {
     // Check second parameter for conversion type.
     // For now, just binary to digital.
     match args[1].as_str() {
-        "-b2d" => println!("Binary to Digital"),
+        "-b2d" => binary_to_digital(args[2].as_str()),
         &_ => todo!()
     };
 }
