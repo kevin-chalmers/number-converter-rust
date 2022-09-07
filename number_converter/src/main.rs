@@ -12,8 +12,10 @@ fn main() {
         println!("Application takes two arguments");
         exit(-1);
     }
-    // Iterate through the command line arguments
-    for arg in args.iter() {
-        println!("{}", arg);
-    }
+    // Check second parameter for conversion type.
+    // For now, just binary to digital.
+    match args[1].as_str() {
+        "-b2d" => println!("Binary to Digital"),
+        &_ => todo!()
+    };
 }
