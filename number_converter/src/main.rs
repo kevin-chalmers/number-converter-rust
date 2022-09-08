@@ -24,6 +24,10 @@ fn binary_to_digital(input: &str) -> Result<u128, &'static str> {
     Ok(num)
 }
 
+// Converts binary string to hexadecimal
+fn binary_to_hex(input: &str) -> Result<&str, &'static str> {
+    return Ok("");
+}
 
 fn main() {
     // Collect the command line arguments
@@ -47,7 +51,11 @@ fn main() {
             };
         },
         "-b2h" => {
-            ();
+            let result = binary_to_hex(args[2].as_str());
+            match result {
+                Ok(x) => println!("{}", x),
+                Err(e) => println!("{}", e)
+            }
         },
         &_ => todo!()
     };
