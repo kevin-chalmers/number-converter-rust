@@ -2,7 +2,7 @@ use std::env;
 use std::process::exit;
 
 // Converts binary string to digital
-fn binary_to_digital(input: &str) -> Result<u128, &'static str> {
+fn binary_to_decimal(input: &str) -> Result<u128, &'static str> {
     // Check if input string too long
     if input.len() > 128 {
         return Err("Input string too long - 128 bits maximum");
@@ -26,6 +26,20 @@ fn binary_to_digital(input: &str) -> Result<u128, &'static str> {
 
 // Converts binary string to hexadecimal
 fn binary_to_hex(input: &str) -> Result<&str, &'static str> {
+    // Convert binary to decimal
+    let decimal = binary_to_decimal(input);
+    // Check result
+    match decimal {
+        Ok(n) => {
+            todo!();
+        },
+        Err(e) => {
+            return Err(e);
+        },
+    };
+    // Convert binary to deci
+    // String to build
+    let mut String = "";
     return Ok("");
 }
 
@@ -41,15 +55,16 @@ fn main() {
         exit(-1);
     }
     // Check second parameter for conversion type.
-    // For now, just binary to digital.
     match args[1].as_str() {
+        // Binary to decimal
         "-b2d" => { 
-            let result = binary_to_digital(args[2].as_str());
+            let result = binary_to_decimal(args[2].as_str());
             match result {
                 Ok(x) => println!("{}", x),
                 Err(e) => println!("{}", e)
             };
         },
+        // Binary to hex
         "-b2h" => {
             let result = binary_to_hex(args[2].as_str());
             match result {
